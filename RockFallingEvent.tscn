@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://EventArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/RockFallingEvent.gd" type="Script" id=2]
+[ext_resource path="res://script/Rock5.gd" type="Script" id=3]
+[ext_resource path="res://audio/bfh1_rock_falling_03.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/rock5.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18, 18 )
+
+[node name="RockFallingEvent" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Rock5" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Rock5"]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock5"]
+shape = SubResource( 1 )
+
+[node name="FallingSound" type="AudioStreamPlayer" parent="Rock5"]
+stream = ExtResource( 4 )
+
+[node name="EventArea" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40, 18 )
+
+[connection signal="area_entered" from="EventArea" to="." method="start_falling"]
+[connection signal="body_entered" from="EventArea" to="." method="start_falling"]
