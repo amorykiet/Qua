@@ -3,6 +3,7 @@ var open_hud: bool = false
 var death_score: int = 0
 
 func _ready():
+	$CaveSound.play()
 	Death.death_time = death_score
 	$"%Label2".text = String(death_score)
 

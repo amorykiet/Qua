@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$Music.play()
 	$AnimationPlayer.play("backing")
 	$"%Label2".text = String(Death.death_time)
 

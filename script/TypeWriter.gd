@@ -1,10 +1,10 @@
 extends Control
 
 var text_list = [
-	"They hated you",
-	"One of them killed you",
-	"But now, open your eyes",
-	"And you must..."
+	"Death is everywhere",
+	"I'm alone in this hell",
+	"I have to go back",
+	"No matter how many deaths"
 ]
 var count: int = 0
 

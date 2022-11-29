@@ -1,11 +1,12 @@
 extends Control
 
 var text_list = [
-	"Oh, You loved them",
-	"You sacrificed for her",
-	"And now, close your eyes",
-	"And you must..."
+	"It's done",
+	"Thank you for playing",
+	"I'm so happy you're still here",
+	"No matter how many deaths"
 ]
+
 var count: int = 0
 
 func add_text(text: String):
